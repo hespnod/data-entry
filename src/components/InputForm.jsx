@@ -3,6 +3,7 @@ import { useState } from "react";
 import Card from "./UI/Card";
 import classes from './InputForm.module.css';
 import Validation from "./Validation";
+import Wrapper from "./Helpers/Wrapper";
 
 const InputForm = (props) => {
     const [userName, setUserName] = useState('');
@@ -45,7 +46,7 @@ const InputForm = (props) => {
     }
 
     return (
-        <div>
+        <Wrapper>
             {error && <Validation title={error.title} message={error.message} onConfirm={handleConfirm} />}
             <Card className={classes.input}>
                 <div className="container">
@@ -60,7 +61,7 @@ const InputForm = (props) => {
                     </form>
                 </div>
             </Card>
-        </div>
+        </Wrapper>
     );
 }
 
