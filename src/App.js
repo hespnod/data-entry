@@ -1,14 +1,13 @@
 import { useState } from "react";
 import InputForm from "./components/InputForm";
-import { ReactDOM } from "react-dom";
 import UserList from "./components/UserList";
 
 
 function App() {
   const [userDetails, setUserDetails] = useState([]);
-  const handleDetails = (newUserName, newAge) => {
+  const handleDetails = (newUserName, newAge, newCollege) => {
     setUserDetails((previous) => {
-      return [...previous, { name: newUserName, age: newAge, id: Math.random().toString() }];
+      return [...previous, { name: newUserName, age: newAge, college: newCollege, id: Math.random().toString() }];
     });
   };
   return (
